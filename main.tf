@@ -136,6 +136,7 @@ data "template_file" "runners" {
     runners_request_concurrency       = "${var.runners_request_concurrency}"
     runners_output_limit              = "${var.runners_output_limit}"
     bucket_name                       = "${aws_s3_bucket.build_cache.bucket}"
+    cache_share                       = "${var.cache_share}"
   }
 }
 

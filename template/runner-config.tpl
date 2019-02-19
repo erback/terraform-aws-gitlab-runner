@@ -19,10 +19,14 @@ check_interval = 0
     disable_cache = false
     volumes = ["/cache"]
     shm_size = 0
-  [runners.cache.s3]
-    ServerAddress = "s3-${aws_region}.amazonaws.com"
-    BucketName = "${bucket_name}"
-    Insecure = false
+  [runners.cache]
+    Type = "s3"
+    Path = "/"
+    Shared = ${cache_share}
+    [runners.cache.s3]
+      ServerAddress = "s3-${aws_region}.amazonaws.com"
+      BucketName = "${bucket_name}"
+      Insecure = false
   [runners.machine]
     IdleCount = ${runners_idle_count}
     IdleTime = ${runners_idle_time}

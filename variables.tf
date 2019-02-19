@@ -184,6 +184,11 @@ variable "docker_machine_user" {
   default     = "docker-machine"
 }
 
+variable "cache_share" {
+  description = "Share cache between runners"
+  default     = false
+}
+
 variable "cache_bucket_prefix" {
   description = "Prefix for s3 cache bucket name."
   type        = "string"
